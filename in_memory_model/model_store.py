@@ -9,7 +9,7 @@ from model_elements.scene import Scene
 class ModelStore(IModelChanger):
     def __init__(self, changed_observer=None):
         if changed_observer is None:
-            self._changed_observers = []
+            self._changed_observers: list[IModelChangedObserver,] = []
         else:
             self._changed_observers: list[IModelChangedObserver,] = changed_observer
 
