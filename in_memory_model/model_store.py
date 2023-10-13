@@ -23,4 +23,7 @@ class ModelStore(IModelChanger):
         pass
 
     def notify_change(self, i_model_changer: IModelChanger):
-        pass
+        # ...    
+        for i in self._changed_observers: # возможно тут реализованна ассоцияция с IModelChangedObserver
+                i.apply_update_model() # и применена функция
+        
